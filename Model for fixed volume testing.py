@@ -9,14 +9,14 @@ from uncertainties import ufloat
 m_data = "C:\\Users\\sree118\\AppData\\Local\\MASTER-8.0.0\\output\\KesslerTetherinertial_d.dia"  # MASTER output file
 s_data = "C:\\Users\\sree118\\AppData\\Local\\MASTER-8.0.0\\output\\KesslerTetherinertial_d.dia.sigm" # Uncertanities
 tether_volume = 3.122e-4   # volume available for tether storage
-l_step_size = 100          # we iterate over tether length
+l_step_size = 10          # we iterate over tether length
 l_min = 100
 l_max = 2000
 l_test_range = np.arange(l_min, l_max+ l_step_size, l_step_size)
 tether_radius = np.sqrt(tether_volume/ (np.pi * l_test_range))        # generated to conserve volume
-kc = 0.3                   # lethality coeefiecient -  the ratio of minimum lethal impactor diameter to radius
-dt = 1                     # critical distance - ignores glancing blows
-t = 8                      # simulated time, in months
+kc = 0.3                  # lethality coeefiecient -  the ratio of minimum lethal impactor diameter to radius
+dt = 0.7                     # critical distance - ignores glancing blows
+t = 2                      # simulated time, in months
 t_y = t / 12               # simulated time, in years
 alt = "400km"             # altitude of sat - only used for plotting, input to MASTER
 # ----------------------------------------------------------------------------------------------------------------------
